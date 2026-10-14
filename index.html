@@ -4,268 +4,675 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Dhanu 🎀</title>
+<title>Happieee Birthdayyy Dhanuu 💗</title>
+
 <style>
-*{box-sizing:border-box}
-:root{--pink:#ffe4ef;--hot:#e65b98;--deep:#a33f73;--ink:#75445c}
-body{
- margin:0;min-height:100vh;font-family:"Trebuchet MS",sans-serif;
- color:var(--ink);background:linear-gradient(140deg,#fff2f8,#f1e8ff,#fff7fa);
- overflow-x:hidden
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap');
+
+:root {
+  --pink: #ff8fba;
+  --dark-pink: #e75b93;
+  --light: #fff0f6;
+  --cream: #fffafc;
+  --text: #753d59;
 }
-button{font:inherit;cursor:pointer}
-.screen{display:none;min-height:100vh;padding:72px 15px 28px;align-items:center;justify-content:center}
-.screen.active{display:flex;animation:fade .5s ease}
-.panel{
- width:min(740px,100%);text-align:center;margin:auto;padding:clamp(22px,5vw,42px);
- background:#ffffffc9;border:1px solid white;border-radius:28px;
- box-shadow:0 15px 45px #b95c861c
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fff8fb, #ffd9e9);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-h1{font-size:clamp(2rem,7vw,4rem);line-height:1.15;color:#c34e86}
-h2{font-size:clamp(1.7rem,5vw,2.7rem);color:#c34e86}
-p{line-height:1.8}
-.decor{font-size:2rem;margin:12px}
-.penguin{font-size:clamp(5rem,20vw,8rem);margin:12px}
-.btn{
- border:0;border-radius:30px;padding:13px 21px;margin:7px;
- color:white;background:linear-gradient(135deg,#ef83b1,#d95291);
- box-shadow:0 6px 15px #d9529125;font-weight:bold
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
 }
-.btn.secondary{background:white;color:#b34d80;border:1px solid #f0bad3;box-shadow:none}
-.note{font-size:.83rem;opacity:.75}
-.feedback{color:#bf4e82;font-weight:bold;min-height:25px}
-.music{
- position:fixed;right:12px;top:12px;z-index:10;border:1px solid #f3c9dd;
- background:#fff8fc;border-radius:25px;padding:10px;color:#a33f73
+
+button:focus-visible {
+  outline: 3px solid #b93670;
+  outline-offset: 4px;
 }
-.gift{font-size:4rem;animation:bob 2s infinite}
-.jar-wrap{position:relative;width:160px;height:190px;margin:25px auto;cursor:pointer}
-.jar{
- position:absolute;inset:25px 12px 0;border:4px solid #e9a5c6;
- border-radius:35px 35px 40px 40px;background:linear-gradient(100deg,#ffffffc9,#ffcce866,#fff9);
- display:flex;align-items:center;justify-content:center;font-size:2.5rem;
- box-shadow:inset 0 0 20px #edb3d155;transition:transform .7s
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 34px 18px 115px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: appear .55s ease;
 }
-.jar:before{content:"";position:absolute;top:-19px;width:90px;height:22px;border:4px solid #e9a5c6;border-radius:8px;background:#ffd8e9}
-.jar.flipped{transform:rotateY(180deg) rotate(-7deg)}
-.jar-label{position:absolute;top:82px;left:0;right:0;font-size:.72rem;font-weight:bold;color:#a33f73}
-.slip{max-width:430px;margin:15px auto;padding:20px;background:#fffdf7;border:1px dashed #e7a1c2;border-radius:16px;animation:fade .4s}
-.slip-message{font-family:Georgia,serif;font-size:1.6rem;color:#b34d80;font-weight:bold}
-.cake{font-size:clamp(6rem,20vw,9rem);animation:bob 2s infinite}
-.letter{max-width:650px;margin:22px auto 0;padding:24px;text-align:left;line-height:1.9;background:#fffdf8;border:1px solid #f4d4e1;border-radius:14px}
-.letter p{font-size:1rem}
-.letter-title{text-align:center;font-family:Georgia,serif;color:#b34d80;font-weight:bold;font-size:1.2rem}
-.hidden{display:none!important}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px auto;max-width:650px}
-.photo{margin:0;padding:7px 7px 20px;background:white;box-shadow:0 5px 15px #9c54701b;transform:rotate(-1deg)}
-.photo:nth-child(even){transform:rotate(2deg)}
-.photo img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:#ffe7f1;border-radius:3px}
-.photo figcaption{font-size:.8rem;margin-top:7px;font-family:Georgia,serif}
-@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@media(max-width:480px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{border-radius:22px}.screen{padding-left:10px;padding-right:10px}}
+
+.page.active { display: flex; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3, p { overflow-wrap: anywhere; }
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3.8rem);
+  margin: 12px 0;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  margin: 8px 0 18px;
+}
+
+h3 { margin: 8px 0; }
+
+.script {
+  font-family: 'Pacifico', cursive;
+  color: var(--dark-pink);
+}
+
+.subtitle {
+  max-width: 560px;
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.emoji { font-size: 3.5rem; }
+
+.card {
+  width: min(650px, 100%);
+  padding: clamp(20px, 5vw, 38px);
+  background: rgba(255,255,255,.84);
+  border: 2px solid white;
+  border-radius: 28px;
+  box-shadow: 0 12px 35px rgba(205, 91, 139, .13);
+}
+
+.btn {
+  padding: 13px 23px;
+  border-radius: 999px;
+  background: var(--dark-pink);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 5px 12px #e75b9330;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover { transform: translateY(-2px); background: #d94783; }
+
+.btn.secondary {
+  background: white;
+  color: var(--dark-pink);
+  border: 1px solid #ffc0d9;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.small { font-size: .88rem; opacity: .8; }
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px max(12px, env(safe-area-inset-bottom));
+  background: #fffaf2eF;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #ffd3e3;
+}
+
+nav button {
+  background: #ffe2ee;
+  color: #a13c69;
+  border-radius: 999px;
+  padding: 10px 13px;
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+nav button.current {
+  background: var(--dark-pink);
+  color: white;
+}
+
+#musicBox {
+  position: fixed;
+  z-index: 30;
+  right: 10px;
+  top: 10px;
+  width: 188px;
+  padding: 9px;
+  background: #fffaf2f2;
+  border: 1px solid #ffc7dc;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px #a7476b20;
+  text-align: center;
+}
+
+#musicBox strong { font-size: .78rem; }
+
+#musicBox button {
+  background: #ffe2ee;
+  color: #96375e;
+  padding: 7px 12px;
+  margin-top: 5px;
+  border-radius: 99px;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+#playerFrame {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  border: 0;
+}
+
+.floating {
+  position: fixed;
+  top: -30px;
+  z-index: 0;
+  pointer-events: none;
+  animation: fall linear forwards;
+  opacity: .8;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(340deg); opacity: 0; }
+}
+
+#giftPinguin {
+  font-size: 6rem;
+  margin: 8px;
+  animation: bob 2s infinite ease-in-out;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-9px) rotate(3deg); }
+}
+
+#noBtn { position: relative; }
+
+.jar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin: 18px auto;
+  max-width: 500px;
+}
+
+.note {
+  background: #fff1b9;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: #825b49;
+  box-shadow: 0 3px 8px #9d5b4315;
+  transform: rotate(var(--tilt));
+  font-size: .92rem;
+}
+
+.jar-result {
+  min-height: 85px;
+  margin: 20px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: var(--dark-pink);
+}
+
+.cake {
+  font-size: clamp(5rem, 20vw, 9rem);
+  cursor: pointer;
+  display: inline-block;
+  animation: bob 2.2s infinite;
+}
+
+.cake-message {
+  min-height: 45px;
+  font-weight: 700;
+  color: var(--dark-pink);
+}
+
+.letter {
+  text-align: left;
+  line-height: 1.95;
+  white-space: pre-line;
+  font-size: .98rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(850px, 100%);
+}
+
+.photo {
+  background: white;
+  padding: 7px 7px 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px #a7476b18;
+  transform: rotate(var(--tilt));
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #ffe6f0;
+}
+
+.photo span {
+  display: block;
+  padding-top: 9px;
+  font-family: 'Pacifico', cursive;
+  font-size: .78rem;
+  color: var(--dark-pink);
+}
+
+.photo.broken img {
+  object-fit: contain;
+}
+
+@media (max-width: 560px) {
+  #musicBox { width: auto; right: 7px; top: 7px; padding: 7px; }
+  #musicBox strong { font-size: .68rem; }
+  #musicBox button { padding: 6px 9px; font-size: .72rem; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  nav { gap: 5px; }
+  nav button { padding: 9px 10px; font-size: .75rem; }
+  .letter { font-size: .93rem; }
+}
 </style>
 </head>
+
 <body>
 
-<button class="music" id="musicButton" onclick="toggleMusic()">♫ Music</button>
-<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+<!-- YouTube background music -->
+<iframe
+  id="playerFrame"
+  title="Birthday background music"
+  src="https://www.youtube.com/embed/4tPJPE4uOEo?enablejsapi=1&autoplay=1&loop=1&playlist=4tPJPE4uOEo&controls=0&playsinline=1"
+  allow="autoplay; encrypted-media"
+  referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
 
-<section class="screen active" id="s1">
- <div class="panel">
-  <div class="decor">🎀 💗 🧸 💗 🎀</div>
-  <p>A TINY BIRTHDAY SURPRISE ✨</p>
-  <h1>♡ 𝑯𝒂𝒑𝒑𝒊𝒆𝒆 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚𝒚𝒚<br>𝑫𝒉𝒂𝒏𝒖𝒖 𝒃𝒂𝒃𝒊𝒆𝒆 ♡</h1>
-  <p>Happy 17th Birthday, Gyana! 🎂💗🧿</p>
-  <div class="gift">🎁</div>
-  <p>A little something for my favourite girl 💌</p>
-  <button class="btn" onclick="startSurprise()">START YOUR SURPRISE ✨</button>
-  <p class="note">Made with lots and lots of love 🎀</p>
- </div>
-</section>
+<div id="musicBox">
+  <strong>🎶 Be My Baby 💗</strong><br>
+  <button id="musicButton" onclick="toggleMusic()">▶ Play music</button>
+</div>
 
-<section class="screen" id="s2">
- <div class="panel">
-  <div class="decor">🎁 🌸 🎀 🌸 🎁</div>
-  <div class="penguin">🐧</div>
-  <h2>Accept my gift, Dhanu babiee?</h2>
-  <p>It's tiny, pink, and made just for you. 🥹💗</p>
-  <button class="btn" onclick="go(3)">YESSS, OF COURSE 💗</button>
-  <button class="btn secondary" onclick="document.getElementById('no').classList.remove('hidden')">NOOO 🙄</button>
-  <div id="no" class="hidden">
-   <div class="penguin">🐧😭</div>
-   <p class="feedback">DHANUUU, WHY ARE YOU DOING THIS TO MEEE 😭💔</p>
-   <button class="btn" onclick="go(3)">OKAY FINE, YES 😭💗</button>
+<!-- PAGE 1: WELCOME -->
+<section class="page active" id="page1">
+  <div class="emoji">🎀 🐧 💗</div>
+  <p class="script">A tiny surprise for my favourite girl</p>
+  <h1 class="script">Happieee Birthdayyy<br>Dhanuu babiee! 💗</h1>
+  <p class="subtitle">
+    To my Baggooo, my partner in random conversations,
+    and my favourite person for the last 12 years. 🫶🏻
+  </p>
+  <div class="card">
+    <p>Someone special has a birthday today… 🎂</p>
+    <p>Ready for your little surprise?</p>
+    <button class="btn" onclick="startSurprise()">OPEN YOUR SURPRISE 💌</button>
+    <p class="small">P.S. Turn your volume up for the music! 🎶</p>
   </div>
- </div>
 </section>
 
-<section class="screen" id="s3">
- <div class="panel">
-  <p>💌 LITTLE NOTES, LOTS OF LOVE 💌</p>
-  <h2>A Jar Full of Wishes 🫙✨</h2>
-  <p>Tap the jar to reveal a little message! 💗</p>
-  <div class="jar-wrap" onclick="drawWish()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')drawWish()">
-   <div class="jar" id="jar">💗 ✨ 💌</div>
-   <div class="jar-label">WISHES FOR DHANU</div>
+<!-- PAGE 2: PENGUIN GIFT -->
+<section class="page" id="page2">
+  <div class="card">
+    <div class="emoji">🎁</div>
+    <h2 class="script">A little gift for you!</h2>
+    <div id="giftPinguin">🐧</div>
+    <p id="giftText" class="subtitle">
+      Pingu has a question for you, Dhanuu…
+      will you accept your birthday gift? 🎀
+    </p>
+    <div class="button-row">
+      <button class="btn" onclick="acceptGift()">YESSS, GIMME! 💗</button>
+      <button class="btn secondary" id="noBtn" onclick="noGift()">NOPE 🙈</button>
+    </div>
   </div>
-  <div id="slip" class="slip hidden" aria-live="polite">
-   <div id="count" class="note"></div>
-   <div id="wish" class="slip-message"></div>
+</section>
+
+<!-- PAGE 3: WISH JAR -->
+<section class="page" id="page3">
+  <div class="emoji">🫙 💌</div>
+  <h2 class="script">A jar full of little reminders</h2>
+  <p class="subtitle">
+    Every note is a tiny reminder of how much you mean to me.
+    Tap the jar to pick a random note! 💗
+  </p>
+
+  <div class="jar">
+    <span class="note" style="--tilt:-3deg">my fav. person 💗</span>
+    <span class="note" style="--tilt:2deg">chulbuli baby 🎀</span>
+    <span class="note" style="--tilt:-2deg">cutie baddie 💅🏻</span>
+    <span class="note" style="--tilt:3deg">happiee birthday dhanu 🎂</span>
+    <span class="note" style="--tilt:-1deg">ILYSM meri baggoo 💋</span>
+    <span class="note" style="--tilt:2deg">mastikhorr chutku 😭</span>
+    <span class="note" style="--tilt:-3deg">12 years of us 🫶🏻</span>
+    <span class="note" style="--tilt:1deg">forever my girl 🧿</span>
   </div>
-  <button class="btn" onclick="drawWish()">PICK A LITTLE WISH 🎀</button>
-  <button class="btn secondary" onclick="go(4)">NEXT SURPRISE →</button>
- </div>
+
+  <div class="card">
+    <div class="emoji" style="font-size:4rem;cursor:pointer" onclick="pickWish()">🫙</div>
+    <button class="btn" onclick="pickWish()">PICK A LITTLE NOTE 💌</button>
+    <div class="jar-result" id="wishResult">Your little note is waiting…</div>
+  </div>
 </section>
 
-<section class="screen" id="s4">
- <div class="panel">
-  <div class="decor">✨ 🩷 ✨</div>
-  <h2>A Cake Just for You 🎂</h2>
-  <div class="cake" id="cake">🎂</div>
-  <p>Close your eyes, make a wish, and keep that pretty smile. 🥹</p>
-  <button class="btn" onclick="cakeWish()">MAKE A WISH, BABIEE ✨</button>
-  <p id="cakeMsg" class="feedback"></p>
-  <button class="btn secondary" onclick="go(5)">ONE LAST THING… 💌</button>
- </div>
+<!-- PAGE 4: CAKE -->
+<section class="page" id="page4">
+  <div class="card">
+    <p class="script">Make a birthday wish… ✨</p>
+    <h2>Happy 17th Birthday! 🎂</h2>
+    <p>Tap the cake to make your wish, Dhanuu!</p>
+    <div class="cake" onclick="cutCake()">🎂</div>
+    <div class="cake-message" id="cakeMessage">
+      One wish, a million possibilities. 💗
+    </div>
+    <p class="small">May your 17th year be full of lovely surprises. 🎀</p>
+    <button class="btn" onclick="cutCake()">MAKE A WISH ✨</button>
+  </div>
 </section>
 
-<section class="screen" id="s5">
- <div class="panel">
-  <div class="decor">💌 🌷 💗 🌷 💌</div>
-  <p>A LITTLE LETTER FROM ME TO YOU</p>
-  <h2>For my Baggoo 💗</h2>
-  <p>There's something I wanted you to read. Open it, Dhanuu. 🥹</p>
-  <button class="btn" id="letterBtn" onclick="openLetter()">CLICK HERE, DHANUU 💌</button>
-  <article id="letter" class="letter hidden">
-   <div class="letter-title">♡ 𝑯𝒂𝒑𝒑𝒚 17𝒕𝒉 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚, 𝑮𝒚𝒂𝒏𝒂 ♡ 🎀</div>
-   <p style="text-align:center">A little something for my favourite girl 💗</p>
-   <p>I wanted to make something for you that wasn't just another birthday message, so here's a tiny collection of memories and words for someone who's been a part of my life for 12 years.</p>
-   <p>It's funny how you can know someone for so long and still have a million things to talk about. There is always something to share, something to laugh about, something to complain about or some random thought that absolutely cannot wait until later. 😭💋</p>
-   <p>I'm really grateful that I have someone like you in my life. Someone I can talk to without overthinking every sentence, someone who has supported me and someone with whom even the most ordinary conversations can become memorable.</p>
-   <p>I hope this new year brings you lots of happiness, new experiences and opportunities to do the things you love. I hope you keep growing into the person you want to be, and that you always have people around you who appreciate you for who you are.</p>
-   <p>And most importantly, I hope we keep adding to our collection of memories. More pictures, more random updates, more conversations that go completely off-topic and more stories that we'll probably laugh about for years. 😭💗</p>
-   <p>This little card is just a reminder of how much I appreciate having you around. And yes, I did put effort into it, so you are required to smile while reading this. 🤭🎀</p>
-   <p>Happy birthday, meri Baggooo. Have the best day, take lots of pictures and don't forget to tell me EVERYTHING afterwards. You know I need the full story. 😭🫶🏻</p>
-   <p style="text-align:center;font-weight:bold;color:#b94d82">𝑳𝒐𝒗𝒆 𝒚𝒐𝒖𝒖𝒖, 𝒎𝒆𝒓𝒊 𝑫𝒉𝒂𝒏𝒖𝒖𝒖 💗🧿</p>
-  </article>
-  <button class="btn secondary" onclick="go(6)">SEE OUR 12 PICTURES 📸</button>
- </div>
+<!-- PAGE 5: LETTER -->
+<section class="page" id="page5">
+  <div class="card">
+    <p class="script" style="text-align:center">A little letter for you 💌</p>
+    <div class="letter">♡ 𝑯𝒂𝒑𝒑𝒚 17𝒕𝒉 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚, 𝑮𝒚𝒂𝒏𝒂 ♡ 🎀
+
+A little something for my favourite girl 💗
+
+I wanted to make something for you that wasn't just another birthday message, so here's a tiny collection of memories and words for someone who's been a part of my life for 12 years.
+
+It's funny how you can know someone for so long and still have a million things to talk about. There is always something to share, something to laugh about, something to complain about or some random thought that absolutely cannot wait until later. 😭💋
+
+I'm really grateful that I have someone like you in my life. Someone I can talk to without overthinking every sentence, someone who has supported me and someone with whom even the most ordinary conversations can become memorable.
+
+I hope this new year brings you lots of happiness, new experiences and opportunities to do the things you love. I hope you keep growing into the person you want to be, and that you always have people around you who appreciate you for who you are.
+
+And most importantly, I hope we keep adding to our collection of memories. More pictures, more random updates, more conversations that go completely off-topic and more stories that we'll probably laugh about for years. 😭💗
+
+This little card is just a reminder of how much I appreciate having you around. And yes, I did put effort into it, so you are required to smile while reading this. 🤭🎀
+
+Happy birthday, meri Baggooo. Have the best day, take lots of pictures and don't forget to tell me EVERYTHING afterwards. You know I need the full story. 😭🫶🏻
+
+𝑳𝒐𝒗𝒆 𝒚𝒐𝒖𝒖𝒖, 𝒎𝒆𝒓𝒊 𝑫𝒉𝒂𝒏𝒖𝒖𝒖 💗🧿</div>
+    <div class="button-row">
+      <button class="btn" onclick="goTo(6)">OUR LITTLE MEMORIES 📸</button>
+    </div>
+  </div>
 </section>
 
-<section class="screen" id="s6">
- <div class="panel">
-  <div class="decor">📸 💗 🎀 💗 📸</div>
-  <p>12 YEARS OF US 🧿</p>
-  <h2>Our Little Memory Gallery 🥹</h2>
-  <p>12 pictures, countless memories, and so many more to come. 💗</p>
+<!-- PAGE 6: PHOTO GALLERY -->
+<section class="page" id="page6">
+  <p class="script">Twelve years, countless memories 💗</p>
+  <h2>Our little photo corner 📸</h2>
+  <p class="subtitle">
+    Every picture holds a little piece of our story.
+    Here's to all the memories we've made and all the ones still waiting for us. 🎀
+  </p>
+
   <div class="gallery" id="gallery"></div>
-  <div style="font-size:3rem">♡</div>
-  <h2>12 years down, so many memories to go 🧿</h2>
-  <p>Happy birthday, meri Dhanu babiee. Don't forget to tell me EVERYTHING afterwards. 😭🫶🏻</p>
-  <button class="btn" onclick="go(1)">REPLAY MY SURPRISE ↻</button>
- </div>
+
+  <div class="card" style="margin-top:25px">
+    <div class="emoji">💗🧿🫶🏻</div>
+    <h2 class="script">To my Dhanuu…</h2>
+    <p class="subtitle">
+      Thank you for being you. Here's to more laughter,
+      more pictures, more chaos, and many more birthdays together!
+    </p>
+    <p class="script">Love youuu, meri Baggoo! 🎀</p>
+    <button class="btn" onclick="goTo(1)">REPLAY THE SURPRISE 💌</button>
+  </div>
 </section>
+
+<nav aria-label="Birthday sections">
+  <button id="nav1" class="current" onclick="goTo(1)">🏠 Home</button>
+  <button id="nav2" onclick="goTo(2)">🎁 Gift</button>
+  <button id="nav3" onclick="goTo(3)">💌 Jar</button>
+  <button id="nav4" onclick="goTo(4)">🎂 Cake</button>
+  <button id="nav5" onclick="goTo(5)">💗 Letter</button>
+  <button id="nav6" onclick="goTo(6)">📸 Photos</button>
+</nav>
 
 <script>
-const music = document.getElementById("bgMusic");
-const musicButton = document.getElementById("musicButton");
+const VIDEO_ID = "4tPJPE4uOEo";
+let musicStarted = false;
+let musicPlaying = false;
+let wishCount = 0;
+let cakeClicked = false;
+let noCount = 0;
 
-function go(n){
- document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
- document.getElementById("s"+n).classList.add("active");
- window.scrollTo({top:0,behavior:"smooth"});
+function sendPlayerCommand(func) {
+  const frame = document.getElementById("playerFrame");
+  if (!frame || !frame.contentWindow) return;
+
+  frame.contentWindow.postMessage(JSON.stringify({
+    event: "command",
+    func: func,
+    args: []
+  }), "https://www.youtube.com");
 }
 
-function startSurprise(){
- go(2);
- music.volume=0.7;
- music.play().then(()=>{
-  musicButton.textContent="♫ Music: ON";
- }).catch(()=>{
-  musicButton.textContent="♫ Tap for music";
- });
+function startSurprise() {
+  goTo(2);
+  startMusic();
+  makeHearts();
 }
 
-async function toggleMusic(){
- if(music.paused){
-  try{
-   await music.play();
-   musicButton.textContent="♫ Music: ON";
-  }catch(e){
-   musicButton.textContent="♫ Music unavailable";
-   alert("Please make sure a playable music file is available as music.mp3.");
+function startMusic() {
+  const frame = document.getElementById("playerFrame");
+
+  if (!musicStarted) {
+    frame.src =
+      "https://www.youtube.com/embed/" + VIDEO_ID +
+      "?enablejsapi=1&autoplay=1&loop=1&playlist=" + VIDEO_ID +
+      "&controls=0&playsinline=1";
+
+    musicStarted = true;
   }
- }else{
-  music.pause();
-  musicButton.textContent="♫ Music: OFF";
- }
+
+  sendPlayerCommand("playVideo");
+  musicPlaying = true;
+  document.getElementById("musicButton").textContent = "⏸ Pause music";
 }
 
-const wishes=[
-"My fav. person 💗",
-"Chulbuli baby 🎀",
-"Cutie baddie 💅🏻",
-"Happiee birthday Dhanu 🎂",
-"ILYSM meri Baggoo 🧿",
-"Mastikhorr chutku 😭",
-"Meri golumoluuu 🫶🏻",
-"My forever favourite human 💌",
-"Cutest little chaos ever 🌷",
-"My partner in random bakwaas 💋",
-"The baddie-est baddie 💅🏻🎀",
-"My favourite notification 📱💗",
-"Certified chulbuli mastikhor 😭",
-"The sweetest soul, always 🩷",
-"My Dhanu babiee forever 🎀",
-"More memories, more gossip, more us 🥹",
-"You deserve all the happiness in the world ✨",
-"Never stop being your adorable self 💗",
-"My Baggo, my Dhanu, my cutie 🧸",
-"Sending you the biggest birthday huggg 🫂💗"
+function toggleMusic() {
+  if (!musicStarted) {
+    startMusic();
+    return;
+  }
+
+  if (musicPlaying) {
+    sendPlayerCommand("pauseVideo");
+    musicPlaying = false;
+    document.getElementById("musicButton").textContent = "▶ Play music";
+  } else {
+    sendPlayerCommand("playVideo");
+    musicPlaying = true;
+    document.getElementById("musicButton").textContent = "⏸ Pause music";
+  }
+}
+
+function goTo(number) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(button => {
+    button.classList.remove("current");
+  });
+
+  document.getElementById("nav" + number).classList.add("current");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (number === 6) {
+    buildGallery();
+  }
+}
+
+function acceptGift() {
+  document.getElementById("giftPinguin").textContent = "🐧💝";
+  document.getElementById("giftText").textContent =
+    "YAYYYY!! Pingu knew you'd say yes! Your gift is a whole website full of love, memories and birthday wishes. 🎀💗";
+  setTimeout(() => goTo(3), 1800);
+}
+
+function noGift() {
+  noCount++;
+  const messages = [
+    "Wait WHAT?! Pingu prepared this especially for you! 😭",
+    "Are you sureee? There's extra love inside! 🎁",
+    "Pingu is giving you the biggest puppy eyes right now. 🥺",
+    "Okay, one more chance… say YESSS! 💗"
+  ];
+
+  document.getElementById("giftText").textContent =
+    messages[Math.min(noCount - 1, messages.length - 1)];
+
+  const button = document.getElementById("noBtn");
+  button.textContent = "OKAY YES 😭💗";
+  button.onclick = acceptGift;
+}
+
+const wishes = [
+  "my fav. person 💗",
+  "chulbuli baby 🎀",
+  "cutie baddie 💅🏻",
+  "happiee birthday dhanu 🎂",
+  "ILYSM meri baggoo 💋",
+  "mastikhorr chutku 😭",
+  "12 years of friendship and counting 🫶🏻",
+  "you deserve all the happiness in the world ✨",
+  "forever my favourite girl 💗",
+  "more memories, more chaos, more us 🎀",
+  "stay happy, meri Dhanuu 🧿",
+  "you make ordinary days special 💌"
 ];
-let count=0,last=-1;
 
-function drawWish(){
- let i=Math.floor(Math.random()*wishes.length);
- while(i===last&&wishes.length>1)i=Math.floor(Math.random()*wishes.length);
- last=i;count++;
- document.getElementById("jar").classList.toggle("flipped");
- document.getElementById("wish").textContent=wishes[i];
- document.getElementById("count").textContent="LITTLE WISH "+count+" ✨";
- document.getElementById("slip").classList.remove("hidden");
-}
+function pickWish() {
+  const result = document.getElementById("wishResult");
+  const wish = wishes[wishCount % wishes.length];
+  wishCount++;
 
-function cakeWish(){
- document.getElementById("cake").textContent="🍰";
- document.getElementById("cakeMsg").textContent="✨ May all your birthday wishes come true! ✨";
-}
-
-function openLetter(){
- document.getElementById("letter").classList.remove("hidden");
- document.getElementById("letterBtn").textContent="A LETTER JUST FOR YOU 💗";
- document.getElementById("letter").scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-// Gallery uses images/1.png through images/12.png
-const gallery=document.getElementById("gallery");
-for(let i=1;i<=12;i++){
- const figure=document.createElement("figure");
- figure.className="photo";
- const img=document.createElement("img");
- img.src="images/"+i+".png";
- img.alt="Memory photo "+i;
- img.loading=i>3?"lazy":"eager";
- img.onerror=function(){
-  this.onerror=null;
-  this.src="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(
-   '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400"><rect width="100%" height="100%" fill="#ffe4ef"/><text x="50%" y="45%" font-size="55" text-anchor="middle">📸</text><text x="50%" y="60%" font-size="18" text-anchor="middle" fill="#a33f73">Add '+i+'.png</text></svg>'
+  result.textContent = wish;
+  result.animate(
+    [
+      { opacity: 0, transform: "scale(.8) rotate(-3deg)" },
+      { opacity: 1, transform: "scale(1) rotate(0)" }
+    ],
+    { duration: 350, easing: "ease-out" }
   );
- };
- const caption=document.createElement("figcaption");
- caption.textContent="memory "+String(i).padStart(2,"0")+" ♡";
- figure.appendChild(img);figure.appendChild(caption);gallery.appendChild(figure);
 }
+
+function cutCake() {
+  const message = document.getElementById("cakeMessage");
+
+  if (!cakeClicked) {
+    cakeClicked = true;
+    message.textContent =
+      "✨ Wish made! May all your sweetest dreams find their way to you. 💗";
+    document.querySelector(".cake").textContent = "🎂✨💗";
+    makeHearts();
+  } else {
+    message.textContent =
+      "One more wish for even more happiness! Happy 17th, Dhanuu! 🎀";
+    makeHearts();
+  }
+}
+
+const captions = [
+  "my favourite girl 💗",
+  "the cutest chaos 🎀",
+  "12 years of us 🫶🏻",
+  "memories forever 🧿",
+  "my Baggoo 💋",
+  "birthday girl 🎂",
+  "more laughter 😭",
+  "always my person 💗",
+  "our little world ✨",
+  "bestie moments 🎀",
+  "love youuu 💌",
+  "to more memories 🥹"
+];
+
+function buildGallery() {
+  const gallery = document.getElementById("gallery");
+  if (gallery.dataset.built === "yes") return;
+
+  for (let i = 1; i <= 12; i++) {
+    const card = document.createElement("div");
+    card.className = "photo";
+    card.style.setProperty("--tilt", (i % 2 ? "-2deg" : "2deg"));
+
+    const img = document.createElement("img");
+    img.src = i + ".png";
+    img.alt = "Birthday memory " + i;
+    img.loading = "lazy";
+
+    img.onerror = function() {
+      card.classList.add("broken");
+      img.alt = "Photo " + i + " not found. Check the filename.";
+      img.style.background = "#ffe2ee";
+      img.style.padding = "18px";
+    };
+
+    const caption = document.createElement("span");
+    caption.textContent = captions[i - 1];
+
+    card.appendChild(img);
+    card.appendChild(caption);
+    gallery.appendChild(card);
+  }
+
+  gallery.dataset.built = "yes";
+}
+
+function makeHearts() {
+  const symbols = ["💗", "💕", "🎀", "✨", "💖", "🌸"];
+
+  for (let i = 0; i < 16; i++) {
+    const item = document.createElement("span");
+    item.className = "floating";
+    item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.animationDuration = (3 + Math.random() * 4) + "s";
+    item.style.fontSize = (15 + Math.random() * 18) + "px";
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 7500);
+  }
+}
+
+buildGallery();
 </script>
 </body>
 </html>
