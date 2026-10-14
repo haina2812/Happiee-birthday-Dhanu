@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dhanu 🎀</title>
+<style>
+*{box-sizing:border-box}
+:root{--pink:#ffe4ef;--hot:#e65b98;--deep:#a33f73;--ink:#75445c}
+body{
+ margin:0;min-height:100vh;font-family:"Trebuchet MS",sans-serif;
+ color:var(--ink);background:linear-gradient(140deg,#fff2f8,#f1e8ff,#fff7fa);
+ overflow-x:hidden
+}
+button{font:inherit;cursor:pointer}
+.screen{display:none;min-height:100vh;padding:72px 15px 28px;align-items:center;justify-content:center}
+.screen.active{display:flex;animation:fade .5s ease}
+.panel{
+ width:min(740px,100%);text-align:center;margin:auto;padding:clamp(22px,5vw,42px);
+ background:#ffffffc9;border:1px solid white;border-radius:28px;
+ box-shadow:0 15px 45px #b95c861c
+}
+h1{font-size:clamp(2rem,7vw,4rem);line-height:1.15;color:#c34e86}
+h2{font-size:clamp(1.7rem,5vw,2.7rem);color:#c34e86}
+p{line-height:1.8}
+.decor{font-size:2rem;margin:12px}
+.penguin{font-size:clamp(5rem,20vw,8rem);margin:12px}
+.btn{
+ border:0;border-radius:30px;padding:13px 21px;margin:7px;
+ color:white;background:linear-gradient(135deg,#ef83b1,#d95291);
+ box-shadow:0 6px 15px #d9529125;font-weight:bold
+}
+.btn.secondary{background:white;color:#b34d80;border:1px solid #f0bad3;box-shadow:none}
+.note{font-size:.83rem;opacity:.75}
+.feedback{color:#bf4e82;font-weight:bold;min-height:25px}
+.music{
+ position:fixed;right:12px;top:12px;z-index:10;border:1px solid #f3c9dd;
+ background:#fff8fc;border-radius:25px;padding:10px;color:#a33f73
+}
+.gift{font-size:4rem;animation:bob 2s infinite}
+.jar-wrap{position:relative;width:160px;height:190px;margin:25px auto;cursor:pointer}
+.jar{
+ position:absolute;inset:25px 12px 0;border:4px solid #e9a5c6;
+ border-radius:35px 35px 40px 40px;background:linear-gradient(100deg,#ffffffc9,#ffcce866,#fff9);
+ display:flex;align-items:center;justify-content:center;font-size:2.5rem;
+ box-shadow:inset 0 0 20px #edb3d155;transition:transform .7s
+}
+.jar:before{content:"";position:absolute;top:-19px;width:90px;height:22px;border:4px solid #e9a5c6;border-radius:8px;background:#ffd8e9}
+.jar.flipped{transform:rotateY(180deg) rotate(-7deg)}
+.jar-label{position:absolute;top:82px;left:0;right:0;font-size:.72rem;font-weight:bold;color:#a33f73}
+.slip{max-width:430px;margin:15px auto;padding:20px;background:#fffdf7;border:1px dashed #e7a1c2;border-radius:16px;animation:fade .4s}
+.slip-message{font-family:Georgia,serif;font-size:1.6rem;color:#b34d80;font-weight:bold}
+.cake{font-size:clamp(6rem,20vw,9rem);animation:bob 2s infinite}
+.letter{max-width:650px;margin:22px auto 0;padding:24px;text-align:left;line-height:1.9;background:#fffdf8;border:1px solid #f4d4e1;border-radius:14px}
+.letter p{font-size:1rem}
+.letter-title{text-align:center;font-family:Georgia,serif;color:#b34d80;font-weight:bold;font-size:1.2rem}
+.hidden{display:none!important}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px auto;max-width:650px}
+.photo{margin:0;padding:7px 7px 20px;background:white;box-shadow:0 5px 15px #9c54701b;transform:rotate(-1deg)}
+.photo:nth-child(even){transform:rotate(2deg)}
+.photo img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:#ffe7f1;border-radius:3px}
+.photo figcaption{font-size:.8rem;margin-top:7px;font-family:Georgia,serif}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:480px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{border-radius:22px}.screen{padding-left:10px;padding-right:10px}}
+</style>
+</head>
+<body>
+
+<button class="music" id="musicButton" onclick="toggleMusic()">♫ Music</button>
+<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+
+<section class="screen active" id="s1">
+ <div class="panel">
+  <div class="decor">🎀 💗 🧸 💗 🎀</div>
+  <p>A TINY BIRTHDAY SURPRISE ✨</p>
+  <h1>♡ 𝑯𝒂𝒑𝒑𝒊𝒆𝒆 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚𝒚𝒚<br>𝑫𝒉𝒂𝒏𝒖𝒖 𝒃𝒂𝒃𝒊𝒆𝒆 ♡</h1>
+  <p>Happy 17th Birthday, Gyana! 🎂💗🧿</p>
+  <div class="gift">🎁</div>
+  <p>A little something for my favourite girl 💌</p>
+  <button class="btn" onclick="startSurprise()">START YOUR SURPRISE ✨</button>
+  <p class="note">Made with lots and lots of love 🎀</p>
+ </div>
+</section>
+
+<section class="screen" id="s2">
+ <div class="panel">
+  <div class="decor">🎁 🌸 🎀 🌸 🎁</div>
+  <div class="penguin">🐧</div>
+  <h2>Accept my gift, Dhanu babiee?</h2>
+  <p>It's tiny, pink, and made just for you. 🥹💗</p>
+  <button class="btn" onclick="go(3)">YESSS, OF COURSE 💗</button>
+  <button class="btn secondary" onclick="document.getElementById('no').classList.remove('hidden')">NOOO 🙄</button>
+  <div id="no" class="hidden">
+   <div class="penguin">🐧😭</div>
+   <p class="feedback">DHANUUU, WHY ARE YOU DOING THIS TO MEEE 😭💔</p>
+   <button class="btn" onclick="go(3)">OKAY FINE, YES 😭💗</button>
+  </div>
+ </div>
+</section>
+
+<section class="screen" id="s3">
+ <div class="panel">
+  <p>💌 LITTLE NOTES, LOTS OF LOVE 💌</p>
+  <h2>A Jar Full of Wishes 🫙✨</h2>
+  <p>Tap the jar to reveal a little message! 💗</p>
+  <div class="jar-wrap" onclick="drawWish()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')drawWish()">
+   <div class="jar" id="jar">💗 ✨ 💌</div>
+   <div class="jar-label">WISHES FOR DHANU</div>
+  </div>
+  <div id="slip" class="slip hidden" aria-live="polite">
+   <div id="count" class="note"></div>
+   <div id="wish" class="slip-message"></div>
+  </div>
+  <button class="btn" onclick="drawWish()">PICK A LITTLE WISH 🎀</button>
+  <button class="btn secondary" onclick="go(4)">NEXT SURPRISE →</button>
+ </div>
+</section>
+
+<section class="screen" id="s4">
+ <div class="panel">
+  <div class="decor">✨ 🩷 ✨</div>
+  <h2>A Cake Just for You 🎂</h2>
+  <div class="cake" id="cake">🎂</div>
+  <p>Close your eyes, make a wish, and keep that pretty smile. 🥹</p>
+  <button class="btn" onclick="cakeWish()">MAKE A WISH, BABIEE ✨</button>
+  <p id="cakeMsg" class="feedback"></p>
+  <button class="btn secondary" onclick="go(5)">ONE LAST THING… 💌</button>
+ </div>
+</section>
+
+<section class="screen" id="s5">
+ <div class="panel">
+  <div class="decor">💌 🌷 💗 🌷 💌</div>
+  <p>A LITTLE LETTER FROM ME TO YOU</p>
+  <h2>For my Baggoo 💗</h2>
+  <p>There's something I wanted you to read. Open it, Dhanuu. 🥹</p>
+  <button class="btn" id="letterBtn" onclick="openLetter()">CLICK HERE, DHANUU 💌</button>
+  <article id="letter" class="letter hidden">
+   <div class="letter-title">♡ 𝑯𝒂𝒑𝒑𝒚 17𝒕𝒉 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚, 𝑮𝒚𝒂𝒏𝒂 ♡ 🎀</div>
+   <p style="text-align:center">A little something for my favourite girl 💗</p>
+   <p>I wanted to make something for you that wasn't just another birthday message, so here's a tiny collection of memories and words for someone who's been a part of my life for 12 years.</p>
+   <p>It's funny how you can know someone for so long and still have a million things to talk about. There is always something to share, something to laugh about, something to complain about or some random thought that absolutely cannot wait until later. 😭💋</p>
+   <p>I'm really grateful that I have someone like you in my life. Someone I can talk to without overthinking every sentence, someone who has supported me and someone with whom even the most ordinary conversations can become memorable.</p>
+   <p>I hope this new year brings you lots of happiness, new experiences and opportunities to do the things you love. I hope you keep growing into the person you want to be, and that you always have people around you who appreciate you for who you are.</p>
+   <p>And most importantly, I hope we keep adding to our collection of memories. More pictures, more random updates, more conversations that go completely off-topic and more stories that we'll probably laugh about for years. 😭💗</p>
+   <p>This little card is just a reminder of how much I appreciate having you around. And yes, I did put effort into it, so you are required to smile while reading this. 🤭🎀</p>
+   <p>Happy birthday, meri Baggooo. Have the best day, take lots of pictures and don't forget to tell me EVERYTHING afterwards. You know I need the full story. 😭🫶🏻</p>
+   <p style="text-align:center;font-weight:bold;color:#b94d82">𝑳𝒐𝒗𝒆 𝒚𝒐𝒖𝒖𝒖, 𝒎𝒆𝒓𝒊 𝑫𝒉𝒂𝒏𝒖𝒖𝒖 💗🧿</p>
+  </article>
+  <button class="btn secondary" onclick="go(6)">SEE OUR 12 PICTURES 📸</button>
+ </div>
+</section>
+
+<section class="screen" id="s6">
+ <div class="panel">
+  <div class="decor">📸 💗 🎀 💗 📸</div>
+  <p>12 YEARS OF US 🧿</p>
+  <h2>Our Little Memory Gallery 🥹</h2>
+  <p>12 pictures, countless memories, and so many more to come. 💗</p>
+  <div class="gallery" id="gallery"></div>
+  <div style="font-size:3rem">♡</div>
+  <h2>12 years down, so many memories to go 🧿</h2>
+  <p>Happy birthday, meri Dhanu babiee. Don't forget to tell me EVERYTHING afterwards. 😭🫶🏻</p>
+  <button class="btn" onclick="go(1)">REPLAY MY SURPRISE ↻</button>
+ </div>
+</section>
+
+<script>
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+function go(n){
+ document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+ document.getElementById("s"+n).classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function startSurprise(){
+ go(2);
+ music.volume=0.7;
+ music.play().then(()=>{
+  musicButton.textContent="♫ Music: ON";
+ }).catch(()=>{
+  musicButton.textContent="♫ Tap for music";
+ });
+}
+
+async function toggleMusic(){
+ if(music.paused){
+  try{
+   await music.play();
+   musicButton.textContent="♫ Music: ON";
+  }catch(e){
+   musicButton.textContent="♫ Music unavailable";
+   alert("Please make sure a playable music file is available as music.mp3.");
+  }
+ }else{
+  music.pause();
+  musicButton.textContent="♫ Music: OFF";
+ }
+}
+
+const wishes=[
+"My fav. person 💗",
+"Chulbuli baby 🎀",
+"Cutie baddie 💅🏻",
+"Happiee birthday Dhanu 🎂",
+"ILYSM meri Baggoo 🧿",
+"Mastikhorr chutku 😭",
+"Meri golumoluuu 🫶🏻",
+"My forever favourite human 💌",
+"Cutest little chaos ever 🌷",
+"My partner in random bakwaas 💋",
+"The baddie-est baddie 💅🏻🎀",
+"My favourite notification 📱💗",
+"Certified chulbuli mastikhor 😭",
+"The sweetest soul, always 🩷",
+"My Dhanu babiee forever 🎀",
+"More memories, more gossip, more us 🥹",
+"You deserve all the happiness in the world ✨",
+"Never stop being your adorable self 💗",
+"My Baggo, my Dhanu, my cutie 🧸",
+"Sending you the biggest birthday huggg 🫂💗"
+];
+let count=0,last=-1;
+
+function drawWish(){
+ let i=Math.floor(Math.random()*wishes.length);
+ while(i===last&&wishes.length>1)i=Math.floor(Math.random()*wishes.length);
+ last=i;count++;
+ document.getElementById("jar").classList.toggle("flipped");
+ document.getElementById("wish").textContent=wishes[i];
+ document.getElementById("count").textContent="LITTLE WISH "+count+" ✨";
+ document.getElementById("slip").classList.remove("hidden");
+}
+
+function cakeWish(){
+ document.getElementById("cake").textContent="🍰";
+ document.getElementById("cakeMsg").textContent="✨ May all your birthday wishes come true! ✨";
+}
+
+function openLetter(){
+ document.getElementById("letter").classList.remove("hidden");
+ document.getElementById("letterBtn").textContent="A LETTER JUST FOR YOU 💗";
+ document.getElementById("letter").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+// Gallery uses images/1.png through images/12.png
+const gallery=document.getElementById("gallery");
+for(let i=1;i<=12;i++){
+ const figure=document.createElement("figure");
+ figure.className="photo";
+ const img=document.createElement("img");
+ img.src="images/"+i+".png";
+ img.alt="Memory photo "+i;
+ img.loading=i>3?"lazy":"eager";
+ img.onerror=function(){
+  this.onerror=null;
+  this.src="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(
+   '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400"><rect width="100%" height="100%" fill="#ffe4ef"/><text x="50%" y="45%" font-size="55" text-anchor="middle">📸</text><text x="50%" y="60%" font-size="18" text-anchor="middle" fill="#a33f73">Add '+i+'.png</text></svg>'
+  );
+ };
+ const caption=document.createElement("figcaption");
+ caption.textContent="memory "+String(i).padStart(2,"0")+" ♡";
+ figure.appendChild(img);figure.appendChild(caption);gallery.appendChild(figure);
+}
+</script>
+</body>
+</html>
